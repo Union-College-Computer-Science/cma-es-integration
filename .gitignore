@@ -138,6 +138,7 @@ dmypy.json
 # virtual environment
 evogym_venv
 .env
+.venv
 
 # backup dir
 backup_*
