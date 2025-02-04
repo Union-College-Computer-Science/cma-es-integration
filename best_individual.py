@@ -1,4 +1,4 @@
-import sys, pandas
+import sys, pandas, run_simulation
 
 
 ITERS = 200
@@ -11,14 +11,14 @@ Continually searches for the lowest best fitness, plays the visualization and re
 
 def visualize_best(filename):
 
-    df = pandas.read_csv("out/" + filename)
+    df = pandas.read_csv("output.csv")
 
     try: #May need this in case file is currently being written to by run_cmaes
 
         best_fitness = min(df["Fitness"])
         row = df.loc[df['Fitness']==best_fitness]
         genome = row.values.tolist()[0][3:]
-        #run_cma_es.run_simulation(ITERS, genome)
+        run_simulation.run_simulation(genome, show=True)
 
     except:
         visualize_best(filename)
@@ -29,11 +29,6 @@ def visualize_best(filename):
 
 if __name__ == "__main__":
 
-    args = sys.argv
-
-    if len(args) < 2:
-        print("Too few arguments!")
-    else:
-        visualize_best(str(args[1]))
+    visualize_best()
 
     
