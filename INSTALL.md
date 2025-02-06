@@ -14,7 +14,7 @@
 
 ## Clone the repository
 
-`git clone https://github.com/Union-College-Computer-Science/exp_framework.git`
+`git clone git@github.com:Union-College-Computer-Science/cma-es-integration.git`
 
 ## Install requirements
 
